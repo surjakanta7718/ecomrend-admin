@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Product</title>
+</head>
+<body>
+  <a href="index.html">← Back to list</a>
+
+  <h1 id="title"></h1>
+  <p id="description"></p>
+  <p><strong>Price:</strong> ₹<span id="price"></span></p>
+  <button id="addToCartBtn">Add to Cart</button>
+
+  <h2>Reviews</h2>
+  <ul id="reviews"></ul>
+
+  <div id="reviewFormContainer" style="display:none;">
+    <h3>Submit Review</h3>
+    <form id="reviewForm">
+      <label>Rating (1-5):</label>
+      <input type="number" name="rating" min="1" max="5" required /><br>
+      <label>Comment:</label><br>
+      <textarea name="comment" required></textarea><br>
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
+
+  <script src="js/product.js">
+  </script>
+</body>
+</html>
