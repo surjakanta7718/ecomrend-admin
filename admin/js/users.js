@@ -29,11 +29,11 @@
 // }
 
 // loadUsers();
-const API_URL = "http://localhost:5000/api/admin/users";
+const API_URL = "http://localhost:5000";
 const token = localStorage.getItem("adminToken");
 
 async function loadUsers() {
-  const res = await fetch(API_URL, {
+  const res = await fetch("/api/admin/users", {
     headers: { "Authorization": `Bearer ${token}` }
   });
   const users = await res.json();
@@ -56,7 +56,7 @@ async function loadUsers() {
 }
 
 async function deleteUser(id) {
-  await fetch(`${API_URL}/${id}`, {
+  await fetch(`/api/admin/users/${id}`, {
     method: "DELETE",
     headers: { "Authorization": `Bearer ${token}` }
   });

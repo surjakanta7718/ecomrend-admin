@@ -2,7 +2,7 @@ const API_URL = "http://localhost:5000";
 const token = localStorage.getItem("adminToken");
 
 async function loadProducts() {
-  const res = await fetch(API_URL, {
+  const res = await fetch("/products", {
     headers: { "Authorization": `Bearer ${token}` }
   });
   const products = await res.json();
@@ -37,7 +37,7 @@ document.getElementById("addProductForm").addEventListener("submit", async (e) =
   };
 
   try {
-    const res = await fetch(API_URL, {
+    const res = await fetch("/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
