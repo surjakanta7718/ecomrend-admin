@@ -8,7 +8,7 @@ async function loadProducts(filters = {}) {
   try {
     // build query params if filters exist
     const params = new URLSearchParams(filters).toString();
-    const res = await fetch(`https://ecomrend.onrender.com/products?${params}`);
+    const res = await fetch(`/products?${params}`);
     const data = await res.json();
 
   console.log("Data=",data);

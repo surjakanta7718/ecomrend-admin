@@ -6,7 +6,7 @@ document.getElementById('f').onsubmit = async (e) => {
     email: fd.get('email'),
     password: fd.get('password')
   };
-  const res = await fetch('https://ecomrend.onrender.com/auth/register', {
+  const res = await fetch('auth/register', {
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body: JSON.stringify(body)
