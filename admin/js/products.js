@@ -37,7 +37,7 @@ document.getElementById("addProductForm").addEventListener("submit", async (e) =
   };
 
   try {
-    const res = await fetch("/products", {
+    const res = await fetch("/api/admin/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
