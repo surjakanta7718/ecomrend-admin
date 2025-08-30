@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/admin/products";
+const API_URL = "http://localhost:5000";
 const token = localStorage.getItem("adminToken");
 
 async function loadProducts() {
@@ -62,7 +62,7 @@ document.getElementById("addProductForm").addEventListener("submit", async (e) =
 });
 
 async function deleteProduct(id) {
-  await fetch(`${API_URL}/${id}`, {
+  await fetch(`/api/admin/products/${id}`, {
     method: "DELETE",
     headers: { "Authorization": `Bearer ${token}` }
   });

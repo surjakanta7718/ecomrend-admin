@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/admin/products";
+const API_URL = "http://localhost:5000";
 const token = localStorage.getItem("adminToken");
 
 // 📌 Extract product ID from URL query params
@@ -8,7 +8,7 @@ const productId = urlParams.get("id");
 // Load product details into form
 async function loadProduct() {
     console.log("Loading product with ID:", productId);
-  const res = await fetch(`${API_URL}/${productId}`, {
+  const res = await fetch(`/api/admin/products/${productId}`, {
     headers: { "Authorization": `Bearer ${token}` }
   });
   const product = await res.json();
@@ -36,7 +36,7 @@ document.getElementById("editProductForm").addEventListener("submit", async (e) 
     price: document.getElementById("price").value
   };
 
-  const res = await fetch(`${API_URL}/${productId}`, {
+  const res = await fetch(`/api/admin/products/${productId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

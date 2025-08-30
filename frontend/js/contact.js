@@ -11,7 +11,7 @@ async function loadContacts() {
  let contacts = [];
   console.log("Token:", token);
    try {
-    const res = await fetch("http://localhost:5000/contact", {
+    const res = await fetch("/contact", {
       headers: { "Authorization": "Bearer " + token }
     });
 
@@ -60,7 +60,7 @@ document.getElementById('contactForm').onsubmit = async (e) => {
     message: form.get('message')
   };
 console.log("Submitting contact form with body:", body);
-  const res = await fetch(`${API_URL}/contact`,{
+  const res = await fetch(`/contact`,{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',   // ✅ tell backend it's JSON

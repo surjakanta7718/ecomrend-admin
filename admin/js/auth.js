@@ -7,7 +7,7 @@ if (document.getElementById("loginForm")) {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    const res = await fetch(`${API_URL}/login`, {
+    const res = await fetch(`/api/admin/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password })

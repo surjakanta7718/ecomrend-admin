@@ -9,7 +9,7 @@ async function loadContacts() {
   }
 
   try {
-    const res = await fetch(`http://localhost:5000/api/admin/users/${userId}/contacts`, {
+    const res = await fetch(`/api/admin/users/${userId}/contacts`, {
       headers: { "Authorization": `Bearer ${token}` }
     });
 
